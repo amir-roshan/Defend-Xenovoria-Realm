@@ -1,6 +1,11 @@
 fileFormatVersion: 2
 guid: 68ba141d95b38104d9d463ad4786bd32
 folderAsset: yes
+<<<<<<< HEAD
+=======
+timeCreated: 1568274875
+licenseType: Store
+>>>>>>> parent of 3affde7 (Revert "Add some assets (Realitic trees and spaceships) + creating a folder for placing scripts")
 DefaultImporter:
   externalObjects: {}
   userData: 
