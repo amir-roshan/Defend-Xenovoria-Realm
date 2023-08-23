@@ -80,6 +80,7 @@ crashlytics-build.properties
 # Ignore Unity Asset Store packages
 /Assets/AssetStoreTools*
 /Assets/*.unitypackage
-/Assets/StarSparrow/
+Assets/StarSparrow/
 Assets/TerrainSampleAssets/
 Assets/Tree9/
+Assets/AssetPacks/
