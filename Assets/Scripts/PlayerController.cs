@@ -6,18 +6,24 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] InputAction movement;
+    [Header("General Setup Settings")]
+    [Tooltip("How fast ship moves up and down based upon player input")][SerializeField] float controlSpeed = 10f;
+    [Tooltip("Set boundaries based on the player's X axis")][SerializeField] float xRange = 10f;
+    [Tooltip("Set boundaries based on the player's Y axis")][SerializeField] float yRange = 9f;
+    [Tooltip("Add all of your lasers here")][SerializeField] GameObject[] lasers;
 
-    [SerializeField] float controlSpeed = 10f;
-    [SerializeField] float xRange = 10f;
-    [SerializeField] float yRange = 9f;
-
+    [Header("Screen position based on tuning")]
     [SerializeField] float positionPitchFactor = -2f;
-    [SerializeField] float controlPitchFactor = -10f;
     [SerializeField] float positionYawFactor = -2f;
-    [SerializeField] float controlRollFactor = 20f;
 
+    [Header("Player input based on tuning")]
+    [SerializeField] float controlPitchFactor = -10f;
+    [SerializeField] float controlRollFactor = 20f;
     [SerializeField] float rotationFactor = .5f; // Adjust this based on how fast you want the rotation to occur
+
+    [Header("Player Input")]
+    [SerializeField] InputAction movement;
+    [SerializeField] InputAction fire;
 
     float xThrow, yThrow;
     // Start is called before the first frame update
@@ -28,10 +34,12 @@ public class PlayerController : MonoBehaviour
     private void OnEnable() // it starts after awake and before start function 
     {
         movement.Enable();
+        fire.Enable();
     }
     private void OnDisable()
     {
         movement.Disable();
+        fire.Disable();
     }
 
     // Update is called once per frame
@@ -39,6 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         ProcessTranslation();
         ProcessRotation();
+        ProcessFiring();
     }
 
     void ProcessTranslation()
@@ -71,6 +80,27 @@ public class PlayerController : MonoBehaviour
         Quaternion targetRotation = Quaternion.Euler(pitch, yaw, roll);
         transform.localRotation = Quaternion.RotateTowards(transform.localRotation, targetRotation, rotationFactor);
         //  returns a new rotation that gradually moves from the current rotation towards the target rotation.
+
+    }
+    void ProcessFiring()
+    {
+        if (fire.ReadValue<float>() > .5f)
+        {
+            SetLasersActive(true);
+        }
+        else
+        {
+            SetLasersActive(false);
+        }
+    }
+
+    void SetLasersActive(bool isActive)
+    {
+        foreach (GameObject laser in lasers)
+        {
+            var laserParticleSystem = laser.GetComponent<ParticleSystem>().emission;
+            laserParticleSystem.enabled = isActive; // Enable/Disable emission
+        }
 
     }
 }
