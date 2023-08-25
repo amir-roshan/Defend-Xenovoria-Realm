@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5449338490308832293}
   m_Layer: 0
   m_Name: Spaceship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,6 +47,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e269818de950d8b4eb41a6790986c1b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controlSpeed: 30
+  xRange: 15
+  yRange: 10
+  lasers: []
+  positionPitchFactor: -2
+  positionYawFactor: 2
+  controlPitchFactor: -15
+  controlRollFactor: -20
+  rotationFactor: 0.5
   movement:
     m_Name: Movement
     m_Type: 0
@@ -121,14 +130,6 @@ MonoBehaviour:
       m_Action: Fire
       m_Flags: 0
     m_Flags: 0
-  controlSpeed: 30
-  xRange: 15
-  yRange: 10
-  positionPitchFactor: -2
-  controlPitchFactor: -15
-  positionYawFactor: 2
-  controlRollFactor: -20
-  rotationFactor: 0.5
 --- !u!1 &3344661713037668295
 GameObject:
   m_ObjectHideFlags: 0

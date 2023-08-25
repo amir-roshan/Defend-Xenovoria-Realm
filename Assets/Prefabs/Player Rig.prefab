@@ -193,8 +193,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spaceship
       objectReference: {fileID: 0}
+    - target: {fileID: 5449338490308832293, guid: a2eda7378e5d7c54195443b904f3c799, type: 3}
+      propertyPath: rotationFactor
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449338490308832293, guid: a2eda7378e5d7c54195443b904f3c799, type: 3}
+      propertyPath: lasers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449338490308832293, guid: a2eda7378e5d7c54195443b904f3c799, type: 3}
+      propertyPath: lasers.Array.data[0]
+      value: 
+      objectReference: {fileID: 3874791216281230151}
+    - target: {fileID: 5449338490308832293, guid: a2eda7378e5d7c54195443b904f3c799, type: 3}
+      propertyPath: lasers.Array.data[1]
+      value: 
+      objectReference: {fileID: 2434421510214943957}
+    - target: {fileID: 7892135866046020567, guid: a2eda7378e5d7c54195443b904f3c799, type: 3}
+      propertyPath: m_Name
+      value: Laser Right
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2eda7378e5d7c54195443b904f3c799, type: 3}
+--- !u!1 &2434421510214943957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7892135866046020567, guid: a2eda7378e5d7c54195443b904f3c799, type: 3}
+  m_PrefabInstance: {fileID: 5498528691348864770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3874791216281230151 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8757448086287770693, guid: a2eda7378e5d7c54195443b904f3c799, type: 3}
+  m_PrefabInstance: {fileID: 5498528691348864770}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6672307426636389743 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1213296747199636077, guid: a2eda7378e5d7c54195443b904f3c799, type: 3}
